@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+}
+
+:root {
+    --bg-color: #2b2b2b
+}
+
+html {
+    color-scheme: dark light;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100dvh;
+    background-color: var(--bg-color);
+}
+
+.animate-text {
+    font-size: 32px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.animate-text span {
+    position: relative;
+}
+
+.animate-text span::before {
+    content: 'Youtuber';
+    color: red;
+    animation: words 20s infinite;
+}
+
+.animate-text span::after {
+    content: '';
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 2px solid red;
+    right: -8px;
+    animation: cursor .6s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--bg-color);
+    }
+}
+
+@keyframes words {
+
+    0%,
+    20% {
+        content: 'Youtuber';
+    }
+
+    21%,
+    40% {
+        content: 'Developer';
+    }
+
+    41%,
+    60% {
+        content: 'Programmer';
+    }
+
+    61%,
+    80% {
+        content: 'Web Designer';
+    }
+
+    81%,
+    100% {
+        content: 'Gamer';
+    }
+}
+
+@keyframes typing {
+
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0px;
+    }
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% +8px);
+    }
+}
